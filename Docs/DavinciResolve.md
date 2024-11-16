@@ -28,6 +28,7 @@ My Resolve workflow is as follows:
     - Davinci will render the clip
 
 ## Installation
+Resolve uses python as a scripting language.
 ### Install Python
     Download and install Python from https://www.python.org/downloads/
 ### Install pillow
