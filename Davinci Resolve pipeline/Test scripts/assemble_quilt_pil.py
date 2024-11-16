@@ -7,7 +7,7 @@ import glob
 frames = []
 width = 0
 height = 0
-for filename in glob.glob('GreenBuddha/*'):
+for filename in glob.glob('Test images/GreenBuddha/*'):
     im = Image.open(filename)
     frames.append(im)
     width, height = im.size
@@ -26,8 +26,8 @@ for y in reversed(range(0, height*rows, height)):
             quilt.paste(frames[i], (x, y))
         i += 1
 
-newTargetDir = filename = "GreenBuddha"
-quiltPath = f"{newTargetDir}/{filename}_qs{columns}x{rows}a{9 / 16}.jpg"
+targetDir = filename = "../Test images/GreenBuddha"
+quiltPath = f"{targetDir}/{filename}_qs{columns}x{rows}a{9 / 16}.jpg"
 
 print(quiltPath)
 if os.path.isfile(quiltPath):

@@ -13,7 +13,7 @@ def center_crop(im, new_width=None, new_height=None):
     # Crop the center of the image
     return im.crop((left, top, right, bottom))
 
-for filePath in glob.glob('numbers/*.png'):
+for filePath in glob.glob('Test images/numbers/*.png'):
     filename = os.path.split(filePath)[1]
     im = Image.open(filePath)
     cropped = center_crop(im, 50, 50)
