@@ -61,6 +61,6 @@ resolve_assemble_quilt_pil.py is the script that will create the quilt after Res
 
 Import this file into Resolve: 
 _Davinci Resolve pipeline/Resolve sample project/Green Buddha.dra/project.drp_  
-Using this button:  
-<img alt="Resolve import.png" src="Resolve_import.png" width="500"/>
+By **right-clicking** on the Resolve project picker and choosing _Restore Project Archive_ and selecting the _Green Buddha.dra_ folder:  
+<img alt="Resolve import.png" src="Resolve_restore_project_archive.png" width="800"/>
 

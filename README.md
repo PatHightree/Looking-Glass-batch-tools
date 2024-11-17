@@ -14,7 +14,7 @@ This workflow lets Resolve automatically assemble a quilt after rendering out th
 
 ## Image Magick
 These commandline scripts use Image Magick to assemble image sequences into quilts and back.  
-They are a bit rough, but they served me well at the time...  
-I would suggest using [Looking Gloves](https://lookinggloves.vercel.app) instead to convert your quilts.
+They are pretty rough, but they served me well at the time...  
+I would suggest using [Looking Gloves](https://lookinggloves.vercel.app) instead to convert image sequences to quilts.
 
 [Image Magick commandline scripts](Docs/ImageMagick_commandline.md)
