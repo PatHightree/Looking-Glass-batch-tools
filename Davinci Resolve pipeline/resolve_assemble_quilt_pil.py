@@ -125,4 +125,4 @@ print(f"Writing to {quiltPath}")
 if os.path.isfile(quiltPath):
     os.remove(quiltPath)
 quilt.save(quiltPath)
-ImageShow.show(quilt)
+# ImageShow.show(quilt)
