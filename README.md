@@ -1,9 +1,9 @@
 # Looking Glass batch tools
-<img align="right" src="Docs/Nixie8_qs5x9a0.5625.jpg" width="150"/>  
+<img align="right" src="Docs/Explosion_06_qs5x9a0.5625.jpg" width="150"/>  
 
 In this repo you will find some tools and workflows with which to create lightfield quilts for Looking Glass holographic displays.  
 A Quilt is an image like the one on the right, that is composed of many (30-100) images which show the subject from a range of different perspectives.  
-The result can be posted and shared on the [Blocks](https://blocks.glass/pathightree/111590) website.
+The result can be posted and shared on the [Blocks](https://blocks.glass/pathightree/114090) website.
 
 ## Davinci Resolve
 Creating quilts from video with Davinci Resolve is a great workflow if you want to use video to do real-world capture of lightields.
