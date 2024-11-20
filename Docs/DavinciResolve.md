@@ -13,7 +13,8 @@ Record a video where the camera moves left to right in a steady motion.
 - Shoot landscape, even though the Looking Glass display is portrait. 
   - You don't need much resolution, a single frame on the LKG-Go is 372x662
   - You'll need the width if your subject was not centered all the time
-### Davinci Resolve processing
+
+### Quilt creation with Davinci Resolve
 - Import the supplied sample project (see below)
 - Or follow these steps  
   - Create a project in Davinci Resolve
@@ -36,7 +37,10 @@ Record a video where the camera moves left to right in a steady motion.
       - Render the clip
       - Davinci will 
         - Render the frames into a subfolder
-        - Assemble the frames into a quilt with the correct parameters in the name  
+        - Assemble the frames into a quilt with the correct parameters in the name
+
+#### Note
+You can uncomment the last line of the python script to automatically view the quilt 
 
 ## Davinci Resolve script setup
 Resolve uses python as a scripting language.
