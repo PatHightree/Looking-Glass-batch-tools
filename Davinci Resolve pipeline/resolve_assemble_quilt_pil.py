@@ -86,7 +86,7 @@ print('Moving files to '+newTargetDir)
 files = os.listdir(targetDir)
 framePaths = []
 for x in files:
-    if x.startswith(filename+"0"):
+    if x.startswith(filename) and x.endswith(".jpg"):
         src = targetDir+"/"+x
         dst = newTargetDir+"/"+x
         if os.path.isfile(dst):
@@ -95,7 +95,7 @@ for x in files:
         framePaths.append(dst)
 
 frameCount = jobDetail['MarkOut'] - jobDetail['MarkIn'] + 1
-rows = 5
+rows = 6
 columns = int(frameCount/rows)+1
 
 # Read frames into memory
