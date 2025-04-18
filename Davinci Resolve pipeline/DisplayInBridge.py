@@ -273,7 +273,6 @@ class BridgePreview:
         self.web_socket_port = web_socket_port
         self.orchestration_name = orchestration_name
         self.counter = 0
-        # self.full_output_folder, self.filename_prefix = self.get_save_image_path()
 
     def connect_to_bridge(self):
         self.bridge = BridgeConnectionHTTP(self.url, self.port, self.web_socket_port)
@@ -288,42 +287,6 @@ class BridgePreview:
         else:
             print("Failed to connect to bridge.")
         return False
-
-
-    # def process_image(self, input_image, depthiness=1.0, focus=0):
-    #     if not self.connect_to_bridge():
-    #         print("Cannot proceed without a bridge connection.")
-    #         return ("NONE",)
-    #
-    #     input_image_np = input_image[0].numpy()
-    #     image = Image.fromarray((np.clip(input_image_np * 255, 0, 255).astype(np.uint8)))
-    #     filename_with_counter = f"{self.filename_prefix}_{self.counter:05}.png"
-    #     image_file_path = os.path.join(self.full_output_folder, filename_with_counter)
-    #     image.save(image_file_path)
-    #     print(f"Saved image to {image_file_path}")
-    #
-    #     # Calculate the aspect ratio of the color part of the side-by-side RGB+D image
-    #     width, height = image.size
-    #     color_width = width // 2  # Assuming the depth image is the same size as the color image
-    #     aspect_ratio = color_width / height
-    #
-    #     playlist = Playlist("default_preview_" + str(datetime.datetime.now().strftime("%Y%m%d_%H%M%S")))
-    #     playlist.add_rgbd_item(URI=image_file_path, rows=5, cols=9, aspect=aspect_ratio, depthiness=depthiness, depth_cutoff=0.9, focus=focus, depth_loc=2, cam_dist=5.0, fov=30, zoom=1.0)
-    #
-    #     if not self.bridge.try_play_playlist(playlist):
-    #         print("Failed to play playlist.")
-    #
-    #     self.counter += 1
-    #     self.bridge.close_web_socket()
-    #     return ("NONE",)
-    #
-    # def get_save_image_path(self):
-    #     base_dir = os.path.join(os.getcwd(), "saved_images")
-    #     if not os.path.exists(base_dir):
-    #         os.makedirs(base_dir)
-    #     now = datetime.datetime.now()
-    #     filename_prefix = now.strftime("%Y%m%d_%H%M%S")
-    #     return base_dir, filename_prefix
 
     def cleanup(self):
         if self.bridge:

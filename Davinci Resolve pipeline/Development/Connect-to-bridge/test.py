@@ -1,22 +1,16 @@
-﻿from DisplayInBridge import BridgePreview
+﻿import os
+import time
+from DisplayInBridge import BridgePreview, Playlist
 
 bp = BridgePreview()
 bp.connect_to_bridge()
 
+pl = Playlist("Preview", False)
+pl.add_quilt_item(f"{os.getcwd()}/../Test images/GreenBuddha/GreenBuddha_qs7x5a0.5625.jpg", 5, 7, 0.5625, 7 * 5)
+# pl.add_quilt_item("https://s3.amazonaws.com/lkg-blocks/u/9aa4b54a7346471d/steampunk_qs8x13.jpg", 13, 8, 0.75, 13*8)
+# pl.add_quilt_item("D:/Projects/- Looking Glass holograms/- Holograms Go -/themba_qs4x11a0.5625.png", 11, 4, 0.5625, 4*11)
+# pl.add_quilt_item("D:/Projects/- Looking Glass holograms/- Holograms Go -/Labradorite_qs11x6a0.5602_C.png", 6, 11, 0.5625, 6*11)
 
-# url='localhost'
-# port=33334
-# web_socket_port=9724
-# orchestration_name="enter_orchestration"
-# data = {
-#     "name": "default"
-# }
-# import requests
-# # response = requests.get(f"http://{url}:{port}/{orchestration_name}")
-# response = requests.post(f"http://{url}:{port}/{orchestration_name}", json=data)
-# print (response.json)
-
-# import requests
-# response = requests.get("http://localhost:33334/bridge_version")
-# print (response.text)
-
+bp.bridge.try_play_playlist(pl)
+time.sleep(5)
+bp.bridge.try_show_window(False)

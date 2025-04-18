@@ -30,16 +30,16 @@
     This trigger script will receive the following 3 global variables:
     "job" : job id.
     "status" : job status
-    "error" : error string(if any)
+    "error" : error string (if any)
 """
 
 import time
 import os
 import shutil
 from math import ceil
-
 from PIL import Image
 from PIL import ImageShow
+from DisplayInBridge import BridgePreview, Playlist
 
 def getJobDetailsBasedOnId(project, jobId):
     jobList = project.GetRenderJobList()
@@ -110,6 +110,7 @@ for framePath in framePaths:
 # Assemble quilt
 rows = 5
 columns = ceil(len(frames)/rows)
+aspect = 9/16
 quilt = Image.new('RGB', (width*columns, height*rows))
 print(f"Frame size {width}x{height} {rows} rows, {columns} columns => quilt size {quilt.size}")
 i = 0
@@ -120,9 +121,20 @@ for y in reversed(range(0, height*rows, height)):
         i += 1
 
 # Write quilt
-quiltPath = f"{newTargetDir}/{filename}_qs{columns}x{rows}a{9 / 16}.jpg"
+quiltPath = f"{newTargetDir}/{filename}_qs{columns}x{rows}a{aspect}.jpg"
 print(f"Writing to {quiltPath}")
 if os.path.isfile(quiltPath):
     os.remove(quiltPath)
 quilt.save(quiltPath)
+
+# Display result on monitor
 # ImageShow.show(quilt)
+
+# Display result on Looking Glass
+bp = BridgePreview()
+bp.connect_to_bridge()
+pl = Playlist("Preview", False)
+pl.add_quilt_item(quiltPath, rows, columns, aspect, rows*columns)
+bp.bridge.try_play_playlist(pl)
+time.sleep(10)
+bp.bridge.try_show_window(False)
