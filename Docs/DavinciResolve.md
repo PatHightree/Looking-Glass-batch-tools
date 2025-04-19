@@ -33,14 +33,12 @@ Record a video where the camera moves left to right in a steady motion.
     - Go to the _Advanced settings_ section
       - Check _trigger script at_
       - Select _End_
-      - Select _resolve_assemble_quilt_pil_
+      - Select _assemble_quilt_
       - Render the clip
       - Davinci will 
         - Render the frames into a subfolder
         - Assemble the frames into a quilt with the correct parameters in the name
-
-#### Note
-You can uncomment the last line of the python script to automatically view the quilt 
+        - Show the result on the Looking Glass
 
 ## Davinci Resolve script setup
 Resolve uses python as a scripting language.
@@ -52,7 +50,7 @@ Pillow is a Windows version of PIL (Python Image Library) which is used to creat
     Open a command prompt and enter "pip3 install pillow"
     You might need to open the command prompt with admin rights
 ### Put the python script in Resolve's special folder
-resolve_assemble_quilt_pil.py is the script that will create the quilt after Resolve has rendered the frames 
+~~~~assemble_quilt.py is the script that will create the quilt after Resolve has rendered the frames 
 
     The script must be placed in the following folder:
     Windows:    %ProgramData%/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Deliver
