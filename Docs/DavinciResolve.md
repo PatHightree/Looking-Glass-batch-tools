@@ -49,8 +49,7 @@ Pillow is a Windows version of PIL (Python Image Library) which is used to creat
 
     Open a command prompt and enter "pip3 install pillow"
     You might need to open the command prompt with admin rights
-### Put the python script in Resolve's special folder
-~~~~assemble_quilt.py is the script that will create the quilt after Resolve has rendered the frames 
+### Put the [assemble_quilt.py](../Davinci Resolve pipeline/assemble_quilt.py)  script in Resolve's special folder
 
     The script must be placed in the following folder:
     Windows:    %ProgramData%/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Deliver
